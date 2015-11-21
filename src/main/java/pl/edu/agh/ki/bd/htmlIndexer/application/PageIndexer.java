@@ -51,25 +51,6 @@ public class PageIndexer {
 
         addWordsToSentences(words, entitySentences);
 
-        /*for (Element element : webPageElements) {
-            if (element.ownText().trim().length() > 1) {
-                for (String sentenceContent : element.ownText().split("[\\.!?]+ ")) {
-
-                    Sentence sentence = new Sentence(sentenceContent, processedUrl);
-                    processedUrl.getSentences().add(sentence);
-
-                    for (String word : sentenceContent.split("\\s+")) {
-                        word = word.replaceAll("[^\\w]", "").toLowerCase();
-                        Word wordEntity = words.get(word) == null ? new Word(word) : words.get(word);
-                        words.put(word, wordEntity);
-                        sentence.getWords().add(wordEntity);
-                        wordEntity.getSentences().add(sentence);
-                    }
-
-                }
-            }
-        }*/
-
         session.persist(processedUrl);
         transaction.commit();
         session.close();

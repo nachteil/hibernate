@@ -37,10 +37,6 @@ public class SessionProvider {
 		return this.sessionFactory.openSession();
 	}
 
-/*    public Session getCurrentSession() {
-        return this.sessionFactory.getCurrentSession();
-    }*/
-
 	public void shutdown() {
 		this.sessionFactory.close();
 	}

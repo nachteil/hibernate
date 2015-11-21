@@ -32,7 +32,6 @@ public class IndexReader {
         Session session = sessionProvider.getSession();
         Transaction transaction = session.beginTransaction();
 
-//        List<String> result = session.createQuery("select s.content from Sentence s where length(s.content) > :len").setParameter("len", length).list();
         List<String> result = session.createCriteria(Sentence.class)
                 .add(Restrictions.gt("contentLength", length))
                 .setProjection(Projections.property("content"))
