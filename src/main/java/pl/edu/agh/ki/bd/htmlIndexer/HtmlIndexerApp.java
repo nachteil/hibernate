@@ -87,6 +87,7 @@ public class HtmlIndexerApp implements CommandLineRunner {
         System.out.println("'i URLs'  	- index URLs, space separated");
         System.out.println("'f WORDS'	- find sentences containing all WORDs, space separated");
         System.out.println("'c'         - print indexed URLs and number of sentences per URL");
+        System.out.println("'o WORD'    - prints number of occurrences of WORD in index");
         System.out.println("'l n        - print indexed sentences longer than n characters (n is integer)' ");
     }
 }
