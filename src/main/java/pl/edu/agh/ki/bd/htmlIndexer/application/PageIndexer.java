@@ -102,14 +102,9 @@ public class PageIndexer {
 
     private Map<String, Word> getAllIndexedWords(Session session) {
 
-//        Session session = sessionProvider.getSession();
-//        Transaction transaction = session.beginTransaction();
         Map<String, Word> words = new HashMap<>();
-//        ((List<Word>) session.createCriteria (Word.class).list()).stream()
         ((List<Word>) session.createQuery("select w from Word w").list()).stream()
                 .forEach(w -> words.put(w.getContent(), w));
-//        transaction.commit();
-//        session.close();
         return words;
     }
 
